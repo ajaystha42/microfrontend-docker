@@ -36,5 +36,13 @@ services:
     image: products_cart:1.0
     container_name: products_cart_container
     command: pnpm serve --host 0.0.0.0
-
-
+  main-app:
+    build: 
+      context: ./main-app
+    volumes:
+      - .:/main-app
+    ports:
+      - 3005:3005
+    image: products_main:1.0
+    container_name: products_main_container
+    command: pnpm serve --host 0.0.0.0
