@@ -2,6 +2,8 @@ version: '3'
 services:
   api-server:
     build: ./api-server
+    # volumes:
+    #   - .:/app
     ports:
       - 8080:8080
     image: apiserver:1.0
@@ -9,8 +11,8 @@ services:
   home:
     build: 
       context: ./home
-    volumes:
-      - .:/home
+    # volumes:
+    #   - .home:/app
     ports:
       - 3000:3000
     image: products_home:1.0
@@ -19,8 +21,8 @@ services:
   pdp:
     build: 
       context: ./pdp
-    volumes:
-      - .:/pdp
+    # volumes:
+    #   - .:/app
     ports:
       - 3001:3001
     image: products_pdp:1.0
@@ -29,8 +31,8 @@ services:
   cart:
     build: 
       context: ./cart
-    volumes:
-      - .:/home
+    # volumes:
+    #   - .:/app
     ports:
       - 3002:3002
     image: products_cart:1.0
@@ -39,8 +41,8 @@ services:
   main-app:
     build: 
       context: ./main-app
-    volumes:
-      - .:/main-app
+    # volumes:
+    #   - .:/app
     ports:
       - 3005:3005
     image: products_main:1.0
